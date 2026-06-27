@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: 'Oswald', sans-serif;
+    background:
+        linear-gradient(to right,
+            rgba(0, 0, 0, .96),
+            rgba(0, 0, 0, .75)),
+        url(img/ghostface-background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: url('https://grainy-gradients.vercel.app/noise.svg');
+    opacity: .05;
+    pointer-events: none;
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 35px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.logo span {
+    color: #ff1e1e;
+    text-shadow: 0 0 10px rgba(255, 0, 0, .5);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: .9rem;
+    letter-spacing: 2px;
+    transition: .4s;
+}
+
+.nav-links a:hover {
+    color: #ff1e1e;
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.socials a {
+    color: #b3b3b3;
+    font-size: 1rem;
+    transition: .4s;
+}
+
+.socials a:hover {
+    color: #ff1e1e;
+    transform: translateY(-2px);
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at center,
+            transparent 10%,
+            rgba(0, 0, 0, .88));
+
+
+
+    pointer-events: none;
+}
+
+.content {
+    position: relative;
+    z-index: 10;
+    width: 650px;
+}
+
+h1 {
+    color: white;
+    font-size: 8rem;
+    line-height: .9;
+    letter-spacing: 5px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #ff1e1e;
+    font-size: 4rem;
+    font-family: 'Caveat', cursive;
+    margin-top: -10px;
+    margin-bottom: 30px;
+    text-shadow: 0 0 15px rgba(255, 0, 0, .4);
+}
+
+p {
+    width: 500px;
+    color: #9b9b9b;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+button {
+    width: 200px;
+    height: 58px;
+    border: 1px solid #ff1e1e;
+    background: transparent;
+    color: white;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+button:hover {
+    background: #ff1e1e;
+    box-shadow:
+        0 0 15px rgba(255, 0, 0, .5),
+        0 0 35px rgba(255, 0, 0, .2);
+    transform: translateY(-3px);
+}
+
+.extra-icons {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.extra-icons img {
+    width: 105px;
+    height: 50px;
+}
+
+.icon-box {
+    width: 55px;
+    height: 45px;
+    border: 1px solid rgba(255, 255, 255, .12);
+    background: rgba(255, 255, 255, .03);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1.2rem;
+    transition: .4s;
+}
+
+.icon-box:hover {
+    border-color: #ff1e1e;
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(255, 0, 0, .18);
+}
+
+.ghostface {
+    position: absolute;
+    right: 13rem;
+    bottom: -40px;
+    height: 115vh;
+    z-index: 2;
+    filter:
+        drop-shadow(0 0 30px rgba(255, 0, 0, .12));
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle,
+            rgba(255, 0, 0, .22),
+            transparent 70%);
+    filter: blur(80px);
+    z-index: 1;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.ghostface {
+    animation: float 6s ease-in-out infinite;
+}
